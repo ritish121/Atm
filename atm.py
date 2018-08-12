@@ -157,13 +157,13 @@ def genotp(data):
     import random
     gen=random.randint(1000,9999)
     receiverAddress=str(data[3])
-    email="timcook732@gmail.com"
+    email="           "                         #bank email from which otp is to be sent
     Subject="OTP for Login"
     Message=("The One Time Password For login is:{}".format(gen))
     connection = smtplib.SMTP('smtp.gmail.com', 587)
     connection.ehlo()
     connection.starttls()
-    connection.login(email,"237koocmit")
+    connection.login(email,"     ")                       #password of that email
     connection.sendmail(email,receiverAddress,("Subject: " +str(Subject) + "\n\n" +str(Message)))
     connection.quit()
     return gen
@@ -220,6 +220,6 @@ if __name__=="__main__":
             choice=0
             choice=input("Type 'Y' for reLogin:")
         else:
-            choice=input("Invalid input!!try again?  type 'Y' for reenter:")
+            choice=input("Invalid input!!try again?  type 'Y' to reenter:")
 
             
